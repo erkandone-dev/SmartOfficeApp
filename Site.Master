@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SmartOfficeApp.Site" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>SmartOffice | Panel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background: #1e272e;
+            color: white;
+            position: fixed;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+            .sidebar h2 {
+                text-align: center;
+                padding: 25px;
+                background: #05c46b;
+                margin: 0;
+                font-size: 22px;
+                letter-spacing: 1px;
+            }
+
+            .sidebar a {
+                display: block;
+                color: #d2dae2;
+                padding: 15px 25px;
+                text-decoration: none;
+                transition: 0.3s;
+                border-left: 4px solid transparent;
+            }
+
+                .sidebar a:hover {
+                    background: #485460;
+                    color: white;
+                    border-left: 4px solid #05c46b;
+                }
+
+        .content {
+            margin-left: 260px;
+            padding: 40px;
+            width: calc(100% - 260px);
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #1e272e;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            background: #05c46b;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+            .btn:hover {
+                background: #04aa5d;
+                transform: translateY(-1px);
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            table th {
+                background: #f8f9fa;
+                padding: 15px;
+                text-align: left;
+                border-bottom: 2px solid #dee2e6;
+            }
+
+            table td {
+                padding: 15px;
+                border-bottom: 1px solid #dee2e6;
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="sidebar">
+            <h2>SmartOffice</h2>
+            <a href="Anasayfa.aspx">🌐 Siteyi Gör</a>
+            <hr style="border: 0.5px solid #34495e; margin: 10px 0;" />
+            <p style="padding-left: 20px; font-size: 12px; color: #7f8c8d;">ADMİN PANELİ</p>
+            <a href="PersonelEkle.aspx">➕ Personel Ekle</a>
+            <a href="PersonelListesi.aspx">📋 Personel Yönetimi</a>
+            <a href="Cihazlar.aspx"><i class="glyphicon glyphicon-briefcase"></i>Ofis Cihazları</a>
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

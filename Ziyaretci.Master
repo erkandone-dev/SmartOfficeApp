@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Ziyaretci.master.cs" Inherits="SmartOfficeApp.Ziyaretci" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>SmartOffice | Kurumsal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f8f9fa;
+        }
+
+        .navbar {
+            background: #fff;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+            .navbar .logo {
+                font-size: 24px;
+                font-weight: bold;
+                color: #05c46b;
+                text-decoration: none;
+            }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #95a5a6;
+        }
+
+        .container {
+            padding: 40px 10%;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-10px);
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar">
+            <a href="Anasayfa.aspx" class="logo">SmartOffice</a>
+            <div class="nav-links">
+                <a href="Anasayfa.aspx">Anasayfa</a>
+                <a href="#">Hizmetlerimiz</a>
+                <a href="#">İletişim</a>
+                <a href="Login.aspx" style="color: #05c46b;">Yönetici Paneli</a>
+            </div>
+        </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">&copy; 2025 SmartOffice Tüm Hakları Saklıdır. </div>
+    </form>
+</body>
+</html>
